@@ -1,0 +1,420 @@
+
+;; Function main (main, funcdef_no=5, decl_uid=9868, cgraph_uid=5, symbol_order=5)
+
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 25 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 25 5 26 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "query.c":12 57 {*pushdi2_rex64}
+     (nil))
+(insn/f 26 25 27 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "query.c":12 81 {*movdi_internal}
+     (nil))
+(insn/f 27 26 28 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -16 [0xfffffffffffffff0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "query.c":12 994 {pro_epilogue_adjust_stack_di_add}
+     (nil))
+(note 28 27 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 28 3 2 (set (mem/c:SI (plus:DI (reg/f:DI 6 bp)
+                (const_int -4 [0xfffffffffffffffc])) [1 argc+0 S4 A32])
+        (reg:SI 5 di [ argc ])) "query.c":12 82 {*movsi_internal}
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [2 argv+0 S8 A64])
+        (reg:DI 4 si [ argv ])) "query.c":12 81 {*movdi_internal}
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f451d792120 *.LC0>)) "query.c":13 81 {*movdi_internal}
+     (nil))
+(call_insn 8 7 10 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("is_word") [flags 0x3]  <function_decl 0x7f451d786100 is_word>) [0 is_word S1 A8])
+            (const_int 0 [0]))) "query.c":13 676 {*call_value}
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 10 8 11 2 (set (reg:SI 4 si)
+        (reg:SI 0 ax [orig:87 _1 ] [87])) "query.c":13 82 {*movsi_internal}
+     (nil))
+(insn 11 10 12 2 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f451d7921b0 *.LC1>)) "query.c":13 81 {*movdi_internal}
+     (nil))
+(insn 12 11 13 2 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "query.c":13 84 {*movqi_internal}
+     (nil))
+(call_insn 13 12 14 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f451daedf00 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "query.c":13 676 {*call_value}
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (nil)))))
+(insn 14 13 22 2 (set (reg:SI 0 ax [orig:88 _5 ] [88])
+        (const_int 0 [0])) "<built-in>":0 82 {*movsi_internal}
+     (nil))
+(insn 22 14 29 2 (use (reg/i:SI 0 ax)) "query.c":14 -1
+     (nil))
+(note 29 22 30 2 NOTE_INSN_EPILOGUE_BEG)
+(insn/f 30 29 31 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0  S8 A8]))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "query.c":14 704 {leave_rex64}
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 31 30 32 2 (simple_return) "query.c":14 689 {simple_return_internal}
+     (nil)
+ -> simple_return)
+(barrier 32 31 24)
+(note 24 32 0 NOTE_INSN_DELETED)
+
+;; Function is_word (is_word, funcdef_no=6, decl_uid=9865, cgraph_uid=6, symbol_order=6)
+
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 90 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 90 5 91 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "query.c":16 57 {*pushdi2_rex64}
+     (nil))
+(insn/f 91 90 92 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "query.c":16 81 {*movdi_internal}
+     (nil))
+(insn/f 92 91 93 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -1072 [0xfffffffffffffbd0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "query.c":16 994 {pro_epilogue_adjust_stack_di_add}
+     (nil))
+(note 93 92 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 93 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -1064 [0xfffffffffffffbd8])) [5 word+0 S8 A64])
+        (reg:DI 5 di [ word ])) "query.c":16 81 {*movdi_internal}
+     (nil))
+(note 3 2 4 2 NOTE_INSN_FUNCTION_BEG)
+(insn 4 3 7 2 (parallel [
+            (set (mem/v/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                        (const_int -8 [0xfffffffffffffff8])) [3 D.9901+0 S8 A64])
+                (unspec:DI [
+                        (const_int 40 [0x28])
+                    ] UNSPEC_SP_TLS_SET))
+            (set (reg:DI 0 ax [101])
+                (const_int 0 [0]))
+            (clobber (reg:CC 17 flags))
+        ]) "query.c":16 1012 {stack_tls_protect_set_di}
+     (nil))
+(insn 7 4 8 2 (set (reg:DI 4 si)
+        (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7f451d792630 *.LC2>)) "query.c":21 81 {*movdi_internal}
+     (nil))
+(insn 8 7 9 2 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7f451d7926c0 *.LC3>)) "query.c":21 81 {*movdi_internal}
+     (nil))
+(call_insn 9 8 11 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fopen") [flags 0x41]  <function_decl 0x7f451dbc0a00 fopen>) [0 fopen S1 A8])
+            (const_int 0 [0]))) "query.c":21 676 {*call_value}
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 11 9 12 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -1048 [0xfffffffffffffbe8])) [4 fp+0 S8 A64])
+        (reg:DI 0 ax [93])) "query.c":21 81 {*movdi_internal}
+     (nil))
+(insn 12 11 13 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -1048 [0xfffffffffffffbe8])) [4 fp+0 S8 A64])
+            (const_int 0 [0]))) "query.c":21 4 {*cmpdi_ccno_1}
+     (nil))
+(jump_insn 13 12 14 2 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 20)
+            (pc))) "query.c":21 627 {*jcc_1}
+     (nil)
+ -> 20)
+(note 14 13 15 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 15 14 16 3 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <var_decl 0x7f451d792750 *.LC4>)) "query.c":22 81 {*movdi_internal}
+     (nil))
+(call_insn 16 15 17 3 (call (mem:QI (symbol_ref:DI ("perror") [flags 0x41]  <function_decl 0x7f451dbd7600 perror>) [0 perror S1 A8])
+        (const_int 0 [0])) "query.c":22 665 {*call}
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 17 16 80 3 (set (reg:SI 0 ax [orig:91 _6 ] [91])
+        (const_int -1 [0xffffffffffffffff])) "query.c":23 82 {*movsi_internal}
+     (nil))
+(jump_insn 80 17 81 3 (set (pc)
+        (label_ref 64)) "query.c":23 659 {jump}
+     (nil)
+ -> 64)
+(barrier 81 80 20)
+(code_label 20 81 21 4 4 (nil) [1 uses])
+(note 21 20 22 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 22 21 82 4 (set (mem/c:SI (plus:DI (reg/f:DI 6 bp)
+                (const_int -1052 [0xfffffffffffffbe4])) [1 toReturn+0 S4 A32])
+        (const_int 0 [0])) "query.c":26 82 {*movsi_internal}
+     (nil))
+(jump_insn 82 22 83 4 (set (pc)
+        (label_ref 44)) "query.c":27 659 {jump}
+     (nil)
+ -> 44)
+(barrier 83 82 53)
+(code_label 53 83 25 5 8 (nil) [1 uses])
+(note 25 53 88 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 88 25 27 5 (set (reg:DI 0 ax [94])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -1040 [0xfffffffffffffbf0]))) "query.c":28 214 {*leadi}
+     (nil))
+(insn 27 88 28 5 (set (reg:DI 5 di)
+        (reg:DI 0 ax [94])) "query.c":28 81 {*movdi_internal}
+     (nil))
+(call_insn/i 28 27 30 5 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("strlen") [flags 0x41]  <function_decl 0x7f451dae7700 strlen>) [0 __builtin_strlen S1 A8])
+            (const_int 0 [0]))) "query.c":28 676 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 30 28 31 5 (parallel [
+            (set (reg:DI 0 ax [orig:88 _2 ] [88])
+                (plus:DI (reg:DI 0 ax [orig:87 _1 ] [87])
+                    (const_int -1 [0xffffffffffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) "query.c":28 218 {*adddi_1}
+     (nil))
+(insn 31 30 32 5 (set (mem/j:QI (plus:DI (plus:DI (reg/f:DI 6 bp)
+                    (reg:DI 0 ax [orig:88 _2 ] [88]))
+                (const_int -1040 [0xfffffffffffffbf0])) [0 buf S1 A8])
+        (const_int 0 [0])) "query.c":28 84 {*movqi_internal}
+     (nil))
+(insn 32 31 89 5 (set (reg:DI 1 dx [95])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -1064 [0xfffffffffffffbd8])) [5 word+0 S8 A64])) "query.c":30 81 {*movdi_internal}
+     (nil))
+(insn 89 32 34 5 (set (reg:DI 0 ax [96])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -1040 [0xfffffffffffffbf0]))) "query.c":30 214 {*leadi}
+     (nil))
+(insn 34 89 35 5 (set (reg:DI 4 si)
+        (reg:DI 1 dx [95])) "query.c":30 81 {*movdi_internal}
+     (nil))
+(insn 35 34 36 5 (set (reg:DI 5 di)
+        (reg:DI 0 ax [96])) "query.c":30 81 {*movdi_internal}
+     (nil))
+(call_insn/i 36 35 38 5 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("strcmp") [flags 0x41]  <function_decl 0x7f451dae5d00 strcmp>) [0 __builtin_strcmp S1 A8])
+            (const_int 0 [0]))) "query.c":30 676 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 38 36 39 5 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 0 ax [orig:89 _3 ] [89])
+            (const_int 0 [0]))) "query.c":30 3 {*cmpsi_ccno_1}
+     (nil))
+(jump_insn 39 38 40 5 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 44)
+            (pc))) "query.c":30 627 {*jcc_1}
+     (nil)
+ -> 44)
+(note 40 39 41 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 41 40 84 6 (set (mem/c:SI (plus:DI (reg/f:DI 6 bp)
+                (const_int -1052 [0xfffffffffffffbe4])) [1 toReturn+0 S4 A32])
+        (const_int 1 [0x1])) "query.c":31 82 {*movsi_internal}
+     (nil))
+(jump_insn 84 41 85 6 (set (pc)
+        (label_ref 56)) "query.c":32 659 {jump}
+     (nil)
+ -> 56)
+(barrier 85 84 44)
+(code_label 44 85 45 7 6 (nil) [2 uses])
+(note 45 44 46 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 46 45 87 7 (set (reg:DI 1 dx [97])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -1048 [0xfffffffffffffbe8])) [4 fp+0 S8 A64])) "query.c":27 81 {*movdi_internal}
+     (nil))
+(insn 87 46 49 7 (set (reg:DI 0 ax [98])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -1040 [0xfffffffffffffbf0]))) "query.c":27 214 {*leadi}
+     (nil))
+(insn 49 87 50 7 (set (reg:SI 4 si)
+        (const_int 1024 [0x400])) "query.c":27 82 {*movsi_internal}
+     (nil))
+(insn 50 49 51 7 (set (reg:DI 5 di)
+        (reg:DI 0 ax [98])) "query.c":27 81 {*movdi_internal}
+     (nil))
+(call_insn 51 50 54 7 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fgets") [flags 0x41]  <function_decl 0x7f451dbcf800 fgets>) [0 fgets S1 A8])
+            (const_int 0 [0]))) "query.c":27 676 {*call_value}
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:SI (use (reg:SI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(insn 54 51 55 7 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/f:DI 0 ax [orig:90 _4 ] [90])
+            (const_int 0 [0]))) "query.c":27 4 {*cmpdi_ccno_1}
+     (nil))
+(jump_insn 55 54 56 7 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 53)
+            (pc))) "query.c":27 627 {*jcc_1}
+     (nil)
+ -> 53)
+(code_label 56 55 57 8 7 (nil) [1 uses])
+(note 57 56 58 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 58 57 59 8 (set (reg:DI 0 ax [99])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -1048 [0xfffffffffffffbe8])) [4 fp+0 S8 A64])) "query.c":35 81 {*movdi_internal}
+     (nil))
+(insn 59 58 60 8 (set (reg:DI 5 di)
+        (reg:DI 0 ax [99])) "query.c":35 81 {*movdi_internal}
+     (nil))
+(call_insn 60 59 61 8 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fclose") [flags 0x41]  <function_decl 0x7f451dbc0700 fclose>) [0 fclose S1 A8])
+            (const_int 0 [0]))) "query.c":35 676 {*call_value}
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 61 60 64 8 (set (reg:SI 0 ax [orig:91 _6 ] [91])
+        (mem/c:SI (plus:DI (reg/f:DI 6 bp)
+                (const_int -1052 [0xfffffffffffffbe4])) [1 toReturn+0 S4 A32])) "query.c":36 82 {*movsi_internal}
+     (nil))
+(code_label 64 61 65 9 9 (nil) [1 uses])
+(note 65 64 71 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 71 65 72 9 (parallel [
+            (set (reg:CCZ 17 flags)
+                (unspec:CCZ [
+                        (mem/v/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                                (const_int -8 [0xfffffffffffffff8])) [3 D.9901+0 S8 A64])
+                        (const_int 40 [0x28])
+                    ] UNSPEC_SP_TLS_TEST))
+            (clobber (reg:DI 2 cx [102]))
+        ]) "query.c":37 1016 {stack_tls_protect_test_di}
+     (nil))
+(jump_insn 72 71 78 9 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 75)
+            (pc))) "query.c":37 627 {*jcc_1}
+     (nil)
+ -> 75)
+(note 78 72 73 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(call_insn 73 78 74 10 (call (mem:QI (symbol_ref:DI ("__stack_chk_fail") [flags 0x41]  <function_decl 0x7f451d793d00 __stack_chk_fail>) [0 __stack_chk_fail S1 A8])
+        (const_int 0 [0])) "query.c":37 665 {*call}
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (expr_list:REG_EH_REGION (const_int 0 [0])
+                (nil))))
+    (nil))
+(barrier 74 73 75)
+(code_label 75 74 79 11 10 (nil) [1 uses])
+(note 79 75 76 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 76 79 94 11 (use (reg/i:SI 0 ax)) "query.c":37 -1
+     (nil))
+(note 94 76 95 11 NOTE_INSN_EPILOGUE_BEG)
+(insn/f 95 94 96 11 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0  S8 A8]))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "query.c":37 704 {leave_rex64}
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 96 95 97 11 (simple_return) "query.c":37 689 {simple_return_internal}
+     (nil)
+ -> simple_return)
+(barrier 97 96 86)
+(note 86 97 0 NOTE_INSN_DELETED)
+
+;; Function py_myFunction (py_myFunction, funcdef_no=7, decl_uid=9881, cgraph_uid=7, symbol_order=7)
+
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 25 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 25 5 26 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "query.c":39 57 {*pushdi2_rex64}
+     (nil))
+(insn/f 26 25 27 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "query.c":39 81 {*movdi_internal}
+     (nil))
+(insn/f 27 26 28 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -32 [0xffffffffffffffe0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "query.c":39 994 {pro_epilogue_adjust_stack_di_add}
+     (nil))
+(note 28 27 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 28 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [6 self+0 S8 A64])
+        (reg:DI 5 di [ self ])) "query.c":39 81 {*movdi_internal}
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -32 [0xffffffffffffffe0])) [6 args+0 S8 A64])
+        (reg:DI 4 si [ args ])) "query.c":39 81 {*movdi_internal}
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (reg/f:DI 0 ax [89])
+        (symbol_ref/f:DI ("*.LC5") [flags 0x2]  <var_decl 0x7f451d79e1b0 *.LC5>)) "query.c":40 81 {*movdi_internal}
+     (nil))
+(insn 8 7 9 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [5 s+0 S8 A64])
+        (reg/f:DI 0 ax [89])) "query.c":40 81 {*movdi_internal}
+     (nil))
+(insn 9 8 10 2 (set (reg:DI 0 ax [90])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [5 s+0 S8 A64])) "query.c":41 81 {*movdi_internal}
+     (nil))
+(insn 10 9 11 2 (set (reg:DI 4 si)
+        (reg:DI 0 ax [90])) "query.c":41 81 {*movdi_internal}
+     (nil))
+(insn 11 10 12 2 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC6") [flags 0x2]  <var_decl 0x7f451d79e240 *.LC6>)) "query.c":41 81 {*movdi_internal}
+     (nil))
+(insn 12 11 13 2 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "query.c":41 84 {*movqi_internal}
+     (nil))
+(call_insn 13 12 22 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("Py_BuildValue") [flags 0x41]  <function_decl 0x7f451d717500 Py_BuildValue>) [0 Py_BuildValue S1 A8])
+            (const_int 0 [0]))) "query.c":41 676 {*call_value}
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (nil)))))
+(insn 22 13 29 2 (use (reg/i:DI 0 ax)) "query.c":42 -1
+     (nil))
+(note 29 22 30 2 NOTE_INSN_EPILOGUE_BEG)
+(insn/f 30 29 31 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0  S8 A8]))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "query.c":42 704 {leave_rex64}
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 31 30 32 2 (simple_return) "query.c":42 689 {simple_return_internal}
+     (nil)
+ -> simple_return)
+(barrier 32 31 24)
+(note 24 32 0 NOTE_INSN_DELETED)

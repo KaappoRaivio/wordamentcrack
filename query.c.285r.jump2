@@ -1,0 +1,613 @@
+
+;; Function main (main, funcdef_no=5, decl_uid=9868, cgraph_uid=5, symbol_order=5)
+
+
+
+try_optimize_cfg iteration 1
+
+
+
+main
+
+Dataflow summary:
+;;  invalidated by call 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15] 53 [] 54 [] 55 [] 56 [] 57 [] 58 [] 59 [] 60 [] 61 [] 62 [] 63 [] 64 [] 65 [] 66 [] 67 [] 68 [] 69 [] 70 [] 71 [] 72 [] 73 [] 74 [] 75 [] 76 [] 77 [] 78 [] 79 [] 80 []
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 20 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 20 [frame] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 37 [r8] 38 [r9]
+;;  exit block uses 	 0 [ax] 6 [bp] 7 [sp] 20 [frame]
+;;  regs ever live 	 0 [ax] 4 [si] 5 [di] 6 [bp] 7 [sp]
+;;  ref usage 	r0={5d,4u} r1={3d} r2={3d} r4={4d,2u} r5={5d,3u} r6={3d,7u} r7={4d,9u} r8={2d} r9={2d} r10={2d} r11={2d} r12={2d} r13={2d} r14={2d} r15={2d} r17={3d} r18={2d} r19={2d} r20={1d,1u} r21={3d} r22={3d} r23={3d} r24={3d} r25={3d} r26={3d} r27={3d} r28={3d} r29={2d} r30={2d} r31={2d} r32={2d} r33={2d} r34={2d} r35={2d} r36={2d} r37={3d} r38={3d} r39={2d} r40={2d} r45={2d} r46={2d} r47={2d} r48={2d} r49={2d} r50={2d} r51={2d} r52={2d} r53={2d} r54={2d} r55={2d} r56={2d} r57={2d} r58={2d} r59={2d} r60={2d} r61={2d} r62={2d} r63={2d} r64={2d} r65={2d} r66={2d} r67={2d} r68={2d} r69={2d} r70={2d} r71={2d} r72={2d} r73={2d} r74={2d} r75={2d} r76={2d} r77={2d} r78={2d} r79={2d} r80={2d} 
+;;    total ref usage 199{173d,26u,0e} in 15{13 regular + 2 call} insns.
+(note 1 0 5 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 0, next block 1, flags: (REACHABLE, RTL, MODIFIED)
+;;  pred:       ENTRY (FALLTHRU)
+;; bb 2 artificial_defs: { }
+;; bb 2 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 4 [si] 5 [di] 6 [bp] 7 [sp] 20 [frame]
+;; lr  use 	 4 [si] 5 [di] 6 [bp] 7 [sp]
+;; lr  def 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15] 53 [] 54 [] 55 [] 56 [] 57 [] 58 [] 59 [] 60 [] 61 [] 62 [] 63 [] 64 [] 65 [] 66 [] 67 [] 68 [] 69 [] 70 [] 71 [] 72 [] 73 [] 74 [] 75 [] 76 [] 77 [] 78 [] 79 [] 80 []
+(note 5 1 25 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 25 5 26 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "query.c":12 -1
+     (nil))
+(insn/f 26 25 27 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "query.c":12 -1
+     (nil))
+(insn/f 27 26 28 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -16 [0xfffffffffffffff0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "query.c":12 -1
+     (nil))
+(note 28 27 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 28 3 2 (set (mem/c:SI (plus:DI (reg/f:DI 6 bp)
+                (const_int -4 [0xfffffffffffffffc])) [1 argc+0 S4 A32])
+        (reg:SI 5 di [ argc ])) "query.c":12 82 {*movsi_internal}
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -16 [0xfffffffffffffff0])) [2 argv+0 S8 A64])
+        (reg:DI 4 si [ argv ])) "query.c":12 81 {*movdi_internal}
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f451d792120 *.LC0>)) "query.c":13 81 {*movdi_internal}
+     (nil))
+(call_insn 8 7 10 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("is_word") [flags 0x3]  <function_decl 0x7f451d786100 is_word>) [0 is_word S1 A8])
+            (const_int 0 [0]))) "query.c":13 676 {*call_value}
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 10 8 11 2 (set (reg:SI 4 si)
+        (reg:SI 0 ax [orig:87 _1 ] [87])) "query.c":13 82 {*movsi_internal}
+     (nil))
+(insn 11 10 12 2 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f451d7921b0 *.LC1>)) "query.c":13 81 {*movdi_internal}
+     (nil))
+(insn 12 11 13 2 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "query.c":13 84 {*movqi_internal}
+     (nil))
+(call_insn 13 12 14 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f451daedf00 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "query.c":13 676 {*call_value}
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (nil)))))
+(insn 14 13 22 2 (set (reg:SI 0 ax [orig:88 _5 ] [88])
+        (const_int 0 [0])) "<built-in>":0 82 {*movsi_internal}
+     (nil))
+(insn 22 14 29 2 (use (reg/i:SI 0 ax)) "query.c":14 -1
+     (nil))
+(note 29 22 30 2 NOTE_INSN_EPILOGUE_BEG)
+(insn/f 30 29 31 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0  S8 A8]))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "query.c":14 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 31 30 32 2 (simple_return) "query.c":14 -1
+     (nil)
+ -> simple_return)
+;;  succ:       EXIT [100.0%] 
+;; lr  out 	 0 [ax] 6 [bp] 7 [sp] 20 [frame]
+
+(barrier 32 31 24)
+(note 24 32 0 NOTE_INSN_DELETED)
+
+;; Function is_word (is_word, funcdef_no=6, decl_uid=9865, cgraph_uid=6, symbol_order=6)
+
+
+
+try_optimize_cfg iteration 1
+
+
+
+is_word
+
+Dataflow summary:
+;;  invalidated by call 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15] 53 [] 54 [] 55 [] 56 [] 57 [] 58 [] 59 [] 60 [] 61 [] 62 [] 63 [] 64 [] 65 [] 66 [] 67 [] 68 [] 69 [] 70 [] 71 [] 72 [] 73 [] 74 [] 75 [] 76 [] 77 [] 78 [] 79 [] 80 []
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 20 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 20 [frame] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 37 [r8] 38 [r9]
+;;  exit block uses 	 0 [ax] 6 [bp] 7 [sp] 20 [frame]
+;;  regs ever live 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 17 [flags]
+;;  ref usage 	r0={16d,11u} r1={10d,2u} r2={9d} r4={11d,3u} r5={14d,7u} r6={3d,29u} r7={4d,23u} r8={7d} r9={7d} r10={7d} r11={7d} r12={7d} r13={7d} r14={7d} r15={7d} r17={14d,4u} r18={7d} r19={7d} r20={1d,1u} r21={8d} r22={8d} r23={8d} r24={8d} r25={8d} r26={8d} r27={8d} r28={8d} r29={7d} r30={7d} r31={7d} r32={7d} r33={7d} r34={7d} r35={7d} r36={7d} r37={8d} r38={8d} r39={7d} r40={7d} r45={7d} r46={7d} r47={7d} r48={7d} r49={7d} r50={7d} r51={7d} r52={7d} r53={7d} r54={7d} r55={7d} r56={7d} r57={7d} r58={7d} r59={7d} r60={7d} r61={7d} r62={7d} r63={7d} r64={7d} r65={7d} r66={7d} r67={7d} r68={7d} r69={7d} r70={7d} r71={7d} r72={7d} r73={7d} r74={7d} r75={7d} r76={7d} r77={7d} r78={7d} r79={7d} r80={7d} 
+;;    total ref usage 634{554d,80u,0e} in 48{41 regular + 7 call} insns.
+(note 1 0 5 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 0, next block 3, flags: (REACHABLE, RTL, MODIFIED)
+;;  pred:       ENTRY (FALLTHRU)
+;; bb 2 artificial_defs: { }
+;; bb 2 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 5 [di] 6 [bp] 7 [sp] 20 [frame]
+;; lr  use 	 5 [di] 6 [bp] 7 [sp]
+;; lr  def 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15] 53 [] 54 [] 55 [] 56 [] 57 [] 58 [] 59 [] 60 [] 61 [] 62 [] 63 [] 64 [] 65 [] 66 [] 67 [] 68 [] 69 [] 70 [] 71 [] 72 [] 73 [] 74 [] 75 [] 76 [] 77 [] 78 [] 79 [] 80 []
+(note 5 1 90 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 90 5 91 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "query.c":16 -1
+     (nil))
+(insn/f 91 90 92 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "query.c":16 -1
+     (nil))
+(insn/f 92 91 93 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -1072 [0xfffffffffffffbd0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "query.c":16 -1
+     (nil))
+(note 93 92 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 93 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -1064 [0xfffffffffffffbd8])) [5 word+0 S8 A64])
+        (reg:DI 5 di [ word ])) "query.c":16 81 {*movdi_internal}
+     (nil))
+(note 3 2 4 2 NOTE_INSN_FUNCTION_BEG)
+(insn 4 3 7 2 (parallel [
+            (set (mem/v/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                        (const_int -8 [0xfffffffffffffff8])) [3 D.9901+0 S8 A64])
+                (unspec:DI [
+                        (const_int 40 [0x28])
+                    ] UNSPEC_SP_TLS_SET))
+            (set (reg:DI 0 ax [101])
+                (const_int 0 [0]))
+            (clobber (reg:CC 17 flags))
+        ]) "query.c":16 1012 {stack_tls_protect_set_di}
+     (nil))
+(insn 7 4 8 2 (set (reg:DI 4 si)
+        (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7f451d792630 *.LC2>)) "query.c":21 81 {*movdi_internal}
+     (nil))
+(insn 8 7 9 2 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7f451d7926c0 *.LC3>)) "query.c":21 81 {*movdi_internal}
+     (nil))
+(call_insn 9 8 11 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fopen") [flags 0x41]  <function_decl 0x7f451dbc0a00 fopen>) [0 fopen S1 A8])
+            (const_int 0 [0]))) "query.c":21 676 {*call_value}
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 11 9 12 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -1048 [0xfffffffffffffbe8])) [4 fp+0 S8 A64])
+        (reg:DI 0 ax [93])) "query.c":21 81 {*movdi_internal}
+     (nil))
+(insn 12 11 13 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                    (const_int -1048 [0xfffffffffffffbe8])) [4 fp+0 S8 A64])
+            (const_int 0 [0]))) "query.c":21 4 {*cmpdi_ccno_1}
+     (nil))
+(jump_insn 13 12 14 2 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 20)
+            (pc))) "query.c":21 627 {*jcc_1}
+     (nil)
+ -> 20)
+;;  succ:       3 (FALLTHRU)
+;;              4
+;; lr  out 	 6 [bp] 7 [sp] 20 [frame]
+
+;; basic block 3, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 2, next block 4, flags: (REACHABLE, RTL, MODIFIED)
+;;  pred:       2 (FALLTHRU)
+;; bb 3 artificial_defs: { }
+;; bb 3 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 6 [bp] 7 [sp] 20 [frame]
+;; lr  use 	 6 [bp] 7 [sp]
+;; lr  def 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15] 53 [] 54 [] 55 [] 56 [] 57 [] 58 [] 59 [] 60 [] 61 [] 62 [] 63 [] 64 [] 65 [] 66 [] 67 [] 68 [] 69 [] 70 [] 71 [] 72 [] 73 [] 74 [] 75 [] 76 [] 77 [] 78 [] 79 [] 80 []
+(note 14 13 15 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 15 14 16 3 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <var_decl 0x7f451d792750 *.LC4>)) "query.c":22 81 {*movdi_internal}
+     (nil))
+(call_insn 16 15 17 3 (call (mem:QI (symbol_ref:DI ("perror") [flags 0x41]  <function_decl 0x7f451dbd7600 perror>) [0 perror S1 A8])
+        (const_int 0 [0])) "query.c":22 665 {*call}
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 17 16 80 3 (set (reg:SI 0 ax [orig:91 _6 ] [91])
+        (const_int -1 [0xffffffffffffffff])) "query.c":23 82 {*movsi_internal}
+     (nil))
+(jump_insn 80 17 81 3 (set (pc)
+        (label_ref 64)) "query.c":23 659 {jump}
+     (nil)
+ -> 64)
+;;  succ:       9 [100.0%] 
+;; lr  out 	 0 [ax] 6 [bp] 7 [sp] 20 [frame]
+
+(barrier 81 80 20)
+;; basic block 4, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 3, next block 5, flags: (REACHABLE, RTL, MODIFIED)
+;;  pred:       2
+;; bb 4 artificial_defs: { }
+;; bb 4 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 6 [bp] 7 [sp] 20 [frame]
+;; lr  use 	 6 [bp] 7 [sp]
+;; lr  def 	
+(code_label 20 81 21 4 4 (nil) [1 uses])
+(note 21 20 22 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 22 21 82 4 (set (mem/c:SI (plus:DI (reg/f:DI 6 bp)
+                (const_int -1052 [0xfffffffffffffbe4])) [1 toReturn+0 S4 A32])
+        (const_int 0 [0])) "query.c":26 82 {*movsi_internal}
+     (nil))
+(jump_insn 82 22 83 4 (set (pc)
+        (label_ref 44)) "query.c":27 659 {jump}
+     (nil)
+ -> 44)
+;;  succ:       7 [100.0%] 
+;; lr  out 	 6 [bp] 7 [sp] 20 [frame]
+
+(barrier 83 82 53)
+;; basic block 5, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 4, next block 6, flags: (REACHABLE, RTL, MODIFIED)
+;;  pred:       7
+;; bb 5 artificial_defs: { }
+;; bb 5 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 6 [bp] 7 [sp] 20 [frame]
+;; lr  use 	 6 [bp] 7 [sp]
+;; lr  def 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15] 53 [] 54 [] 55 [] 56 [] 57 [] 58 [] 59 [] 60 [] 61 [] 62 [] 63 [] 64 [] 65 [] 66 [] 67 [] 68 [] 69 [] 70 [] 71 [] 72 [] 73 [] 74 [] 75 [] 76 [] 77 [] 78 [] 79 [] 80 []
+(code_label 53 83 25 5 8 (nil) [1 uses])
+(note 25 53 88 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 88 25 27 5 (set (reg:DI 0 ax [94])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -1040 [0xfffffffffffffbf0]))) "query.c":28 214 {*leadi}
+     (nil))
+(insn 27 88 28 5 (set (reg:DI 5 di)
+        (reg:DI 0 ax [94])) "query.c":28 81 {*movdi_internal}
+     (nil))
+(call_insn/i 28 27 30 5 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("strlen") [flags 0x41]  <function_decl 0x7f451dae7700 strlen>) [0 __builtin_strlen S1 A8])
+            (const_int 0 [0]))) "query.c":28 676 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 30 28 31 5 (parallel [
+            (set (reg:DI 0 ax [orig:88 _2 ] [88])
+                (plus:DI (reg:DI 0 ax [orig:87 _1 ] [87])
+                    (const_int -1 [0xffffffffffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) "query.c":28 218 {*adddi_1}
+     (nil))
+(insn 31 30 32 5 (set (mem/j:QI (plus:DI (plus:DI (reg/f:DI 6 bp)
+                    (reg:DI 0 ax [orig:88 _2 ] [88]))
+                (const_int -1040 [0xfffffffffffffbf0])) [0 buf S1 A8])
+        (const_int 0 [0])) "query.c":28 84 {*movqi_internal}
+     (nil))
+(insn 32 31 89 5 (set (reg:DI 1 dx [95])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -1064 [0xfffffffffffffbd8])) [5 word+0 S8 A64])) "query.c":30 81 {*movdi_internal}
+     (nil))
+(insn 89 32 34 5 (set (reg:DI 0 ax [96])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -1040 [0xfffffffffffffbf0]))) "query.c":30 214 {*leadi}
+     (nil))
+(insn 34 89 35 5 (set (reg:DI 4 si)
+        (reg:DI 1 dx [95])) "query.c":30 81 {*movdi_internal}
+     (nil))
+(insn 35 34 36 5 (set (reg:DI 5 di)
+        (reg:DI 0 ax [96])) "query.c":30 81 {*movdi_internal}
+     (nil))
+(call_insn/i 36 35 38 5 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("strcmp") [flags 0x41]  <function_decl 0x7f451dae5d00 strcmp>) [0 __builtin_strcmp S1 A8])
+            (const_int 0 [0]))) "query.c":30 676 {*call_value}
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 38 36 39 5 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 0 ax [orig:89 _3 ] [89])
+            (const_int 0 [0]))) "query.c":30 3 {*cmpsi_ccno_1}
+     (nil))
+(jump_insn 39 38 40 5 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 44)
+            (pc))) "query.c":30 627 {*jcc_1}
+     (nil)
+ -> 44)
+;;  succ:       6 (FALLTHRU)
+;;              7 (DFS_BACK)
+;; lr  out 	 6 [bp] 7 [sp] 20 [frame]
+
+;; basic block 6, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 5, next block 7, flags: (REACHABLE, RTL, MODIFIED)
+;;  pred:       5 (FALLTHRU)
+;; bb 6 artificial_defs: { }
+;; bb 6 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 6 [bp] 7 [sp] 20 [frame]
+;; lr  use 	 6 [bp] 7 [sp]
+;; lr  def 	
+(note 40 39 41 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 41 40 84 6 (set (mem/c:SI (plus:DI (reg/f:DI 6 bp)
+                (const_int -1052 [0xfffffffffffffbe4])) [1 toReturn+0 S4 A32])
+        (const_int 1 [0x1])) "query.c":31 82 {*movsi_internal}
+     (nil))
+(jump_insn 84 41 85 6 (set (pc)
+        (label_ref 56)) "query.c":32 659 {jump}
+     (nil)
+ -> 56)
+;;  succ:       8 [100.0%] 
+;; lr  out 	 6 [bp] 7 [sp] 20 [frame]
+
+(barrier 85 84 44)
+;; basic block 7, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 6, next block 8, flags: (REACHABLE, RTL, MODIFIED)
+;;  pred:       5 (DFS_BACK)
+;;              4 [100.0%] 
+;; bb 7 artificial_defs: { }
+;; bb 7 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 6 [bp] 7 [sp] 20 [frame]
+;; lr  use 	 6 [bp] 7 [sp]
+;; lr  def 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15] 53 [] 54 [] 55 [] 56 [] 57 [] 58 [] 59 [] 60 [] 61 [] 62 [] 63 [] 64 [] 65 [] 66 [] 67 [] 68 [] 69 [] 70 [] 71 [] 72 [] 73 [] 74 [] 75 [] 76 [] 77 [] 78 [] 79 [] 80 []
+(code_label 44 85 45 7 6 (nil) [2 uses])
+(note 45 44 46 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 46 45 87 7 (set (reg:DI 1 dx [97])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -1048 [0xfffffffffffffbe8])) [4 fp+0 S8 A64])) "query.c":27 81 {*movdi_internal}
+     (nil))
+(insn 87 46 49 7 (set (reg:DI 0 ax [98])
+        (plus:DI (reg/f:DI 6 bp)
+            (const_int -1040 [0xfffffffffffffbf0]))) "query.c":27 214 {*leadi}
+     (nil))
+(insn 49 87 50 7 (set (reg:SI 4 si)
+        (const_int 1024 [0x400])) "query.c":27 82 {*movsi_internal}
+     (nil))
+(insn 50 49 51 7 (set (reg:DI 5 di)
+        (reg:DI 0 ax [98])) "query.c":27 81 {*movdi_internal}
+     (nil))
+(call_insn 51 50 54 7 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fgets") [flags 0x41]  <function_decl 0x7f451dbcf800 fgets>) [0 fgets S1 A8])
+            (const_int 0 [0]))) "query.c":27 676 {*call_value}
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:SI (use (reg:SI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(insn 54 51 55 7 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg/f:DI 0 ax [orig:90 _4 ] [90])
+            (const_int 0 [0]))) "query.c":27 4 {*cmpdi_ccno_1}
+     (nil))
+(jump_insn 55 54 56 7 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 53)
+            (pc))) "query.c":27 627 {*jcc_1}
+     (nil)
+ -> 53)
+;;  succ:       5
+;;              8 (FALLTHRU)
+;; lr  out 	 6 [bp] 7 [sp] 20 [frame]
+
+;; basic block 8, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 7, next block 9, flags: (REACHABLE, RTL, MODIFIED)
+;;  pred:       7 (FALLTHRU)
+;;              6 [100.0%] 
+;; bb 8 artificial_defs: { }
+;; bb 8 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 6 [bp] 7 [sp] 20 [frame]
+;; lr  use 	 6 [bp] 7 [sp]
+;; lr  def 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15] 53 [] 54 [] 55 [] 56 [] 57 [] 58 [] 59 [] 60 [] 61 [] 62 [] 63 [] 64 [] 65 [] 66 [] 67 [] 68 [] 69 [] 70 [] 71 [] 72 [] 73 [] 74 [] 75 [] 76 [] 77 [] 78 [] 79 [] 80 []
+(code_label 56 55 57 8 7 (nil) [1 uses])
+(note 57 56 58 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 58 57 59 8 (set (reg:DI 0 ax [99])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -1048 [0xfffffffffffffbe8])) [4 fp+0 S8 A64])) "query.c":35 81 {*movdi_internal}
+     (nil))
+(insn 59 58 60 8 (set (reg:DI 5 di)
+        (reg:DI 0 ax [99])) "query.c":35 81 {*movdi_internal}
+     (nil))
+(call_insn 60 59 61 8 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fclose") [flags 0x41]  <function_decl 0x7f451dbc0700 fclose>) [0 fclose S1 A8])
+            (const_int 0 [0]))) "query.c":35 676 {*call_value}
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 61 60 64 8 (set (reg:SI 0 ax [orig:91 _6 ] [91])
+        (mem/c:SI (plus:DI (reg/f:DI 6 bp)
+                (const_int -1052 [0xfffffffffffffbe4])) [1 toReturn+0 S4 A32])) "query.c":36 82 {*movsi_internal}
+     (nil))
+;;  succ:       9 (FALLTHRU)
+;; lr  out 	 0 [ax] 6 [bp] 7 [sp] 20 [frame]
+
+;; basic block 9, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 8, next block 10, flags: (REACHABLE, RTL, MODIFIED)
+;;  pred:       8 (FALLTHRU)
+;;              3 [100.0%] 
+;; bb 9 artificial_defs: { }
+;; bb 9 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 0 [ax] 6 [bp] 7 [sp] 20 [frame]
+;; lr  use 	 6 [bp] 7 [sp]
+;; lr  def 	 2 [cx] 17 [flags]
+(code_label 64 61 65 9 9 (nil) [1 uses])
+(note 65 64 71 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 71 65 72 9 (parallel [
+            (set (reg:CCZ 17 flags)
+                (unspec:CCZ [
+                        (mem/v/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                                (const_int -8 [0xfffffffffffffff8])) [3 D.9901+0 S8 A64])
+                        (const_int 40 [0x28])
+                    ] UNSPEC_SP_TLS_TEST))
+            (clobber (reg:DI 2 cx [102]))
+        ]) "query.c":37 1016 {stack_tls_protect_test_di}
+     (nil))
+(jump_insn 72 71 78 9 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 75)
+            (pc))) "query.c":37 627 {*jcc_1}
+     (nil)
+ -> 75)
+;;  succ:       11
+;;              10 (FALLTHRU)
+;; lr  out 	 0 [ax] 6 [bp] 7 [sp] 20 [frame]
+
+;; basic block 10, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 9, next block 11, flags: (REACHABLE, RTL, MODIFIED)
+;;  pred:       9 (FALLTHRU)
+;; bb 10 artificial_defs: { }
+;; bb 10 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 6 [bp] 7 [sp]
+;; lr  use 	 6 [bp] 7 [sp]
+;; lr  def 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15] 53 [] 54 [] 55 [] 56 [] 57 [] 58 [] 59 [] 60 [] 61 [] 62 [] 63 [] 64 [] 65 [] 66 [] 67 [] 68 [] 69 [] 70 [] 71 [] 72 [] 73 [] 74 [] 75 [] 76 [] 77 [] 78 [] 79 [] 80 []
+(note 78 72 73 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(call_insn 73 78 74 10 (call (mem:QI (symbol_ref:DI ("__stack_chk_fail") [flags 0x41]  <function_decl 0x7f451d793d00 __stack_chk_fail>) [0 __stack_chk_fail S1 A8])
+        (const_int 0 [0])) "query.c":37 665 {*call}
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (expr_list:REG_EH_REGION (const_int 0 [0])
+                (nil))))
+    (nil))
+;;  succ:      
+;; lr  out 	 7 [sp]
+
+(barrier 74 73 75)
+;; basic block 11, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 10, next block 1, flags: (REACHABLE, RTL, MODIFIED)
+;;  pred:       9
+;; bb 11 artificial_defs: { }
+;; bb 11 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 0 [ax] 6 [bp] 7 [sp] 20 [frame]
+;; lr  use 	 0 [ax] 6 [bp] 7 [sp]
+;; lr  def 	
+(code_label 75 74 79 11 10 (nil) [1 uses])
+(note 79 75 76 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 76 79 94 11 (use (reg/i:SI 0 ax)) "query.c":37 -1
+     (nil))
+(note 94 76 95 11 NOTE_INSN_EPILOGUE_BEG)
+(insn/f 95 94 96 11 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0  S8 A8]))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "query.c":37 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 96 95 97 11 (simple_return) "query.c":37 -1
+     (nil)
+ -> simple_return)
+;;  succ:       EXIT [100.0%] 
+;; lr  out 	 0 [ax] 6 [bp] 7 [sp] 20 [frame]
+
+(barrier 97 96 86)
+(note 86 97 0 NOTE_INSN_DELETED)
+
+;; Function py_myFunction (py_myFunction, funcdef_no=7, decl_uid=9881, cgraph_uid=7, symbol_order=7)
+
+
+
+try_optimize_cfg iteration 1
+
+
+
+py_myFunction
+
+Dataflow summary:
+;;  invalidated by call 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15] 53 [] 54 [] 55 [] 56 [] 57 [] 58 [] 59 [] 60 [] 61 [] 62 [] 63 [] 64 [] 65 [] 66 [] 67 [] 68 [] 69 [] 70 [] 71 [] 72 [] 73 [] 74 [] 75 [] 76 [] 77 [] 78 [] 79 [] 80 []
+;;  hardware regs used 	 7 [sp]
+;;  regular block artificial uses 	 6 [bp] 7 [sp]
+;;  eh block artificial uses 	 6 [bp] 7 [sp] 16 [argp] 20 [frame]
+;;  entry block defs 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 6 [bp] 7 [sp] 20 [frame] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 37 [r8] 38 [r9]
+;;  exit block uses 	 0 [ax] 6 [bp] 7 [sp] 20 [frame]
+;;  regs ever live 	 0 [ax] 4 [si] 5 [di] 6 [bp] 7 [sp]
+;;  ref usage 	r0={5d,5u} r1={2d} r2={2d} r4={3d,2u} r5={3d,2u} r6={3d,9u} r7={4d,8u} r8={1d} r9={1d} r10={1d} r11={1d} r12={1d} r13={1d} r14={1d} r15={1d} r17={2d} r18={1d} r19={1d} r20={1d,1u} r21={2d} r22={2d} r23={2d} r24={2d} r25={2d} r26={2d} r27={2d} r28={2d} r29={1d} r30={1d} r31={1d} r32={1d} r33={1d} r34={1d} r35={1d} r36={1d} r37={2d} r38={2d} r39={1d} r40={1d} r45={1d} r46={1d} r47={1d} r48={1d} r49={1d} r50={1d} r51={1d} r52={1d} r53={1d} r54={1d} r55={1d} r56={1d} r57={1d} r58={1d} r59={1d} r60={1d} r61={1d} r62={1d} r63={1d} r64={1d} r65={1d} r66={1d} r67={1d} r68={1d} r69={1d} r70={1d} r71={1d} r72={1d} r73={1d} r74={1d} r75={1d} r76={1d} r77={1d} r78={1d} r79={1d} r80={1d} 
+;;    total ref usage 128{101d,27u,0e} in 15{14 regular + 1 call} insns.
+(note 1 0 5 NOTE_INSN_DELETED)
+;; basic block 2, loop depth 0, count 0, freq 0, maybe hot
+;;  prev block 0, next block 1, flags: (REACHABLE, RTL, MODIFIED)
+;;  pred:       ENTRY (FALLTHRU)
+;; bb 2 artificial_defs: { }
+;; bb 2 artificial_uses: { u-1(6){ }u-1(7){ }}
+;; lr  in  	 4 [si] 5 [di] 6 [bp] 7 [sp] 20 [frame]
+;; lr  use 	 4 [si] 5 [di] 6 [bp] 7 [sp]
+;; lr  def 	 0 [ax] 1 [dx] 2 [cx] 4 [si] 5 [di] 8 [st] 9 [st(1)] 10 [st(2)] 11 [st(3)] 12 [st(4)] 13 [st(5)] 14 [st(6)] 15 [st(7)] 17 [flags] 18 [fpsr] 19 [fpcr] 21 [xmm0] 22 [xmm1] 23 [xmm2] 24 [xmm3] 25 [xmm4] 26 [xmm5] 27 [xmm6] 28 [xmm7] 29 [mm0] 30 [mm1] 31 [mm2] 32 [mm3] 33 [mm4] 34 [mm5] 35 [mm6] 36 [mm7] 37 [r8] 38 [r9] 39 [r10] 40 [r11] 45 [xmm8] 46 [xmm9] 47 [xmm10] 48 [xmm11] 49 [xmm12] 50 [xmm13] 51 [xmm14] 52 [xmm15] 53 [] 54 [] 55 [] 56 [] 57 [] 58 [] 59 [] 60 [] 61 [] 62 [] 63 [] 64 [] 65 [] 66 [] 67 [] 68 [] 69 [] 70 [] 71 [] 72 [] 73 [] 74 [] 75 [] 76 [] 77 [] 78 [] 79 [] 80 []
+(note 5 1 25 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn/f 25 5 26 2 (set (mem:DI (pre_dec:DI (reg/f:DI 7 sp)) [0  S8 A8])
+        (reg/f:DI 6 bp)) "query.c":39 -1
+     (nil))
+(insn/f 26 25 27 2 (set (reg/f:DI 6 bp)
+        (reg/f:DI 7 sp)) "query.c":39 -1
+     (nil))
+(insn/f 27 26 28 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 7 sp)
+                    (const_int -32 [0xffffffffffffffe0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "query.c":39 -1
+     (nil))
+(note 28 27 2 2 NOTE_INSN_PROLOGUE_END)
+(insn 2 28 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -24 [0xffffffffffffffe8])) [6 self+0 S8 A64])
+        (reg:DI 5 di [ self ])) "query.c":39 81 {*movdi_internal}
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -32 [0xffffffffffffffe0])) [6 args+0 S8 A64])
+        (reg:DI 4 si [ args ])) "query.c":39 81 {*movdi_internal}
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (reg/f:DI 0 ax [89])
+        (symbol_ref/f:DI ("*.LC5") [flags 0x2]  <var_decl 0x7f451d79e1b0 *.LC5>)) "query.c":40 81 {*movdi_internal}
+     (nil))
+(insn 8 7 9 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [5 s+0 S8 A64])
+        (reg/f:DI 0 ax [89])) "query.c":40 81 {*movdi_internal}
+     (nil))
+(insn 9 8 10 2 (set (reg:DI 0 ax [90])
+        (mem/f/c:DI (plus:DI (reg/f:DI 6 bp)
+                (const_int -8 [0xfffffffffffffff8])) [5 s+0 S8 A64])) "query.c":41 81 {*movdi_internal}
+     (nil))
+(insn 10 9 11 2 (set (reg:DI 4 si)
+        (reg:DI 0 ax [90])) "query.c":41 81 {*movdi_internal}
+     (nil))
+(insn 11 10 12 2 (set (reg:DI 5 di)
+        (symbol_ref/f:DI ("*.LC6") [flags 0x2]  <var_decl 0x7f451d79e240 *.LC6>)) "query.c":41 81 {*movdi_internal}
+     (nil))
+(insn 12 11 13 2 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "query.c":41 84 {*movqi_internal}
+     (nil))
+(call_insn 13 12 22 2 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("Py_BuildValue") [flags 0x41]  <function_decl 0x7f451d717500 Py_BuildValue>) [0 Py_BuildValue S1 A8])
+            (const_int 0 [0]))) "query.c":41 676 {*call_value}
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (nil)))))
+(insn 22 13 29 2 (use (reg/i:DI 0 ax)) "query.c":42 -1
+     (nil))
+(note 29 22 30 2 NOTE_INSN_EPILOGUE_BEG)
+(insn/f 30 29 31 2 (parallel [
+            (set (reg/f:DI 7 sp)
+                (plus:DI (reg/f:DI 6 bp)
+                    (const_int 8 [0x8])))
+            (set (reg/f:DI 6 bp)
+                (mem:DI (reg/f:DI 6 bp) [0  S8 A8]))
+            (clobber (mem:BLK (scratch) [0  A8]))
+        ]) "query.c":42 -1
+     (expr_list:REG_CFA_DEF_CFA (plus:DI (reg/f:DI 7 sp)
+            (const_int 8 [0x8]))
+        (nil)))
+(jump_insn 31 30 32 2 (simple_return) "query.c":42 -1
+     (nil)
+ -> simple_return)
+;;  succ:       EXIT [100.0%] 
+;; lr  out 	 0 [ax] 6 [bp] 7 [sp] 20 [frame]
+
+(barrier 32 31 24)
+(note 24 32 0 NOTE_INSN_DELETED)
